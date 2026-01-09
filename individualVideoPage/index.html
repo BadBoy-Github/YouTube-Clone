@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youtube</title>
+
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Link favicon -->
+    <link rel="shortcut icon" href="https://res.cloudinary.com/dz53e3szr/image/upload/v1767098372/logo_legiwi.png" />
+
+    <!-- Link Google fonts - Google sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Link cdn fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="parent">
+      <section class="navbar" id="navbar">
+        <div class="navbar-left">
+          <div class="navbar-left-left">
+            <i class="fa-solid fa-bars navbar-left-left-img"></i>
+          </div>
+          <a href="/" class="navbar-left-right">
+            <img
+              src="./data/logo.png"
+              alt="youtube logo"
+              class="navbar-left-right-img"
+            />
+            <p class="navbar-left-right-para">YouTube</p>
+          </a>
+        </div>
+        <div class="navbar-center">
+          <div class="navbar-center-search">
+            <div class="navbar-center-search-input-parent">
+              <input
+                type="text"
+                class="navbar-center-search-input"
+                placeholder="Search"
+              />
+            </div>
+            <div class="navbar-center-search-icon-parent">
+              <i
+                class="fa-solid fa-magnifying-glass navbar-center-search-icon"
+              ></i>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-right">
+          <div class="navbar-right-profile">
+            <i class="fa-regular fa-user navbar-right-profile-img"></i>
+          </div>
+        </div>
+      </section>
+
+      <section id="main" class="main">
+        <section class="videoplayer" id="videoplayer">
+          <div class="videoplayer-parent ml">
+            <video
+              src=""
+              controls
+              poster=""
+              id="mainVideo"
+              class="videoplayer-parent-video"
+            ></video>
+          </div>
+          <div class="videoplayer-headline-parent ml">
+            <span class="videoplayer-headline" id="videoplayerHeadline"> </span>
+            <span id="tag" class="videoplayer-headline-tag"></span>
+          </div>
+
+          <div class="channel-parent ml">
+            <div class="channel-parent-left">
+              <div class="channel-parent-left-img-parent">
+                <img src="" alt="" class="channel-parent-left-img" id="cImg" />
+              </div>
+
+              <div class="channel-parent-left-cname-parent">
+                <div class="channel-parent-left-cname-top">
+                  <div
+                    class="channel-parent-left-cname-top-name"
+                    id="cName"
+                  ></div>
+                  <div class="channel-parent-left-cname-top-tick">
+                    <i class="fa-solid fa-check channel-cname-tick"></i>
+                  </div>
+                </div>
+                <div class="channel-parent-left-cname-bot" id="cSubCount"></div>
+              </div>
+              <div class="channel-parent-left-subs-parent subscribed-yes">
+                <div class="subscribe-tooltip">You have already subscribed. Click to unsubscribe</div>
+                <p class="subs-arr">Subscribed</p>
+              </div>
+            </div>
+            <div class="channel-parent-right">
+              <div class="like-dislike">
+                <div class="like-parent">
+                  <i class="fa-regular fa-thumbs-up thumbsupdown-img"></i>
+                  <p class="thumbsup-para" id="likeCount"></p>
+                </div>
+                <div class="separator"></div>
+                <div class="unlike-parent">
+                  <p class="thumbsdown-para" id="dislikeCount"></p>
+                  <i class="fa-regular fa-thumbs-down thumbsupdown-img"></i>
+                </div>
+              </div>
+              <div class="watchlater-btn">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <p class="share-para">Watch Later</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <section class="description ml" id="description">
+            <div class="description-top">
+              <h1 class="description-top-views" id="videPeriod"></h1>
+              <p class="description-top-para" id="descriptionPara"></p>
+
+              <span class="description-top-tag" id="descriptionTag"></span>
+            </div>
+          </section>
+
+          <section class="comments ml" id="comments">
+            <div class="comments-top">
+              <h1 class="comments-top-heading" id="commentsCountTag"></h1>
+
+            </div>
+
+            <div class="comments-body"></div>
+          </section>
+        </section>
+
+        <!-- SideBar -->
+        <section class="sidebar" id="sidebar">
+          <div class="tags">
+            <div class="tag-child-selected">All</div>
+            <div class="tag-child-not-selected">Mr. KK - GNS</div>
+            <div class="tag-child-not-selected">Related</div>
+            <div class="tag-child-not-selected">For You</div>
+            <div class="tag-child-not-selected">Watched</div>
+          </div>
+
+          <div class="shorts-parent">
+            <div class="shorts-heading">
+              <div class="shorts-heading-logo">
+                <img
+                  src="https://res.cloudinary.com/dz53e3szr/image/upload/v1767098371/shorts_p6yxbo.png"
+                  alt=""
+                  class="shorts-heading-logo-img"
+                />
+              </div>
+              <h1 class="shorts-heading-txt">Shorts</h1>
+            </div>
+            <div class="shorts-body">
+              <div class="shorts-item">
+                <video
+                  src=""
+                  alt=""
+                  class="shorts-item-video"
+                ></video>
+                <div class="shorts-bot">
+                  <div class="shorts-bot-left">
+                    <p class="shorts-bot-left-para" ></p>
+                    <p class="shorts-bot-left-views" ></p>
+                  </div>
+                  <div class="shorts-bot-right">
+                    <div class="shorts-bot-right-img-parent">
+                      <i
+                        class="fa-solid fa-ellipsis-vertical shorts-bot-right-img"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="shorts-item">
+                <video
+                  src=""
+                  alt=""
+                  class="shorts-item-video"
+                ></video>
+                <div class="shorts-bot">
+                  <div class="shorts-bot-left">
+                    <p class="shorts-bot-left-para"></p>
+                    <p class="shorts-bot-left-views"></p>
+                  </div>
+                  <div class="shorts-bot-right">
+                    <div class="shorts-bot-right-img-parent">
+                      <i
+                        class="fa-solid fa-ellipsis-vertical shorts-bot-right-img"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="shorts-item">
+                <video
+                  src=""
+                  alt=""
+                  class="shorts-item-video"
+                ></video>
+                <div class="shorts-bot">
+                  <div class="shorts-bot-left">
+                    <p class="shorts-bot-left-para"></p>
+                    <p class="shorts-bot-left-views"></p>
+                  </div>
+                  <div class="shorts-bot-right">
+                    <div class="shorts-bot-right-img-parent">
+                      <i
+                        class="fa-solid fa-ellipsis-vertical shorts-bot-right-img"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video -->
+          <div class="video-parent">
+            <div class="video-item">
+              <div class="video-item-left">
+                <video
+                  src=""
+                  class="video-item-left-video"
+                  poster=""
+                ></video>
+                <div class="video-item-time"></div>
+              </div>
+              <div class="video-item-right">
+                <div class="shorts-bot">
+                  <div class="shorts-bot-left">
+                    <p class="shorts-bot-left-para video-bot-left-para">
+                    </p>
+                    <p class="shorts-bot-left-views video-bot-left-views">
+                    </p>
+                    <p class="shorts-bot-left-views video-bot-left-views" id="allVideoViews">
+                      
+                    </p>
+                  </div>
+                  <div class="shorts-bot-right">
+                    <div class="shorts-bot-right-img-parent">
+                      <i
+                        class="fa-solid fa-ellipsis-vertical shorts-bot-right-img"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="video-item">
+              <div class="video-item-left">
+                <video
+                  src=""
+                  class="video-item-left-video"
+                  poster=""
+                ></video>
+                <div class="video-item-time"></div>
+              </div>
+              <div class="video-item-right">
+                <div class="shorts-bot">
+                  <div class="shorts-bot-left">
+                    <p class="shorts-bot-left-para video-bot-left-para">
+                      
+                    </p>
+                    <p class="shorts-bot-left-views video-bot-left-views">
+                      
+                    </p>
+                    <p class="shorts-bot-left-views video-bot-left-views" id="allVideoViews">
+                      
+                    </p>
+                  </div>
+                  <div class="shorts-bot-right">
+                    <div class="shorts-bot-right-img-parent">
+                      <i
+                        class="fa-solid fa-ellipsis-vertical shorts-bot-right-img"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="video-item">
+              <div class="video-item-left">
+                <video
+                  src=""
+                  class="video-item-left-video"
+                  poster=""
+                ></video>
+                <div class="video-item-time"></div>
+              </div>
+              <div class="video-item-right">
+                <div class="shorts-bot">
+                  <div class="shorts-bot-left">
+                    <p class="shorts-bot-left-para video-bot-left-para">
+                      
+                    </p>
+                    <p class="shorts-bot-left-views video-bot-left-views">
+                      
+                    </p>
+                    <p class="shorts-bot-left-views video-bot-left-views" id="allVideoViews">
+                      
+                    </p>
+                  </div>
+                  <div class="shorts-bot-right">
+                    <div class="shorts-bot-right-img-parent">
+                      <i
+                        class="fa-solid fa-ellipsis-vertical shorts-bot-right-img"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="video-item">
+              <div class="video-item-left">
+                <video
+                  src=""
+                  class="video-item-left-video"
+                  poster=""
+                ></video>
+                <div class="video-item-time"></div>
+              </div>
+              <div class="video-item-right">
+                <div class="shorts-bot">
+                  <div class="shorts-bot-left">
+                    <p class="shorts-bot-left-para video-bot-left-para">
+                      
+                    </p>
+                    <p class="shorts-bot-left-views video-bot-left-views">
+                      
+                    </p>
+                    <p class="shorts-bot-left-views video-bot-left-views" id="allVideoViews">
+                      
+                    </p>
+                  </div>
+                  <div class="shorts-bot-right">
+                    <div class="shorts-bot-right-img-parent">
+                      <i
+                        class="fa-solid fa-ellipsis-vertical shorts-bot-right-img"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="video-item">
+              <div class="video-item-left">
+                <video
+                  src=""
+                  class="video-item-left-video"
+                  poster=""
+                ></video>
+                <div class="video-item-time"></div>
+              </div>
+              <div class="video-item-right">
+                <div class="shorts-bot">
+                  <div class="shorts-bot-left">
+                    <p class="shorts-bot-left-para video-bot-left-para">
+                      
+                    </p>
+                    <p class="shorts-bot-left-views video-bot-left-views">
+                      
+                    </p>
+                    <p class="shorts-bot-left-views video-bot-left-views" id="allVideoViews">
+                      
+                    </p>
+                  </div>
+                  <div class="shorts-bot-right">
+                    <div class="shorts-bot-right-img-parent">
+                      <i
+                        class="fa-solid fa-ellipsis-vertical shorts-bot-right-img"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="video-item">
+              <div class="video-item-left">
+                <video
+                  src=""
+                  class="video-item-left-video"
+                  poster=""
+                ></video>
+                <div class="video-item-time"></div>
+              </div>
+              <div class="video-item-right">
+                <div class="shorts-bot">
+                  <div class="shorts-bot-left">
+                    <p class="shorts-bot-left-para video-bot-left-para">
+                      
+                    </p>
+                    <p class="shorts-bot-left-views video-bot-left-views">
+                      
+                    </p>
+                    <p class="shorts-bot-left-views video-bot-left-views" id="allVideoViews">
+                      
+                    </p>
+                  </div>
+                  <div class="shorts-bot-right">
+                    <div class="shorts-bot-right-img-parent">
+                      <i
+                        class="fa-solid fa-ellipsis-vertical shorts-bot-right-img"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="video-item">
+              <div class="video-item-left">
+                <video
+                  src=""
+                  class="video-item-left-video"
+                  poster=""
+                ></video>
+                <div class="video-item-time"></div>
+              </div>
+              <div class="video-item-right">
+                <div class="shorts-bot">
+                  <div class="shorts-bot-left">
+                    <p class="shorts-bot-left-para video-bot-left-para">
+                      
+                    </p>
+                    <p class="shorts-bot-left-views video-bot-left-views">
+                      
+                    </p>
+                    <p class="shorts-bot-left-views video-bot-left-views" id="allVideoViews">
+                      
+                    </p>
+                  </div>
+                  <div class="shorts-bot-right">
+                    <div class="shorts-bot-right-img-parent">
+                      <i
+                        class="fa-solid fa-ellipsis-vertical shorts-bot-right-img"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="video-item">
+              <div class="video-item-left">
+                <video
+                  src=""
+                  class="video-item-left-video"
+                  poster=""
+                ></video>
+                <div class="video-item-time"></div>
+              </div>
+              <div class="video-item-right">
+                <div class="shorts-bot">
+                  <div class="shorts-bot-left">
+                    <p class="shorts-bot-left-para video-bot-left-para">
+                      
+                    </p>
+                    <p class="shorts-bot-left-views video-bot-left-views">
+                      
+                    </p>
+                    <p class="shorts-bot-left-views video-bot-left-views" id="allVideoViews">
+                      
+                    </p>
+                  </div>
+                  <div class="shorts-bot-right">
+                    <div class="shorts-bot-right-img-parent">
+                      <i
+                        class="fa-solid fa-ellipsis-vertical shorts-bot-right-img"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="video-item">
+              <div class="video-item-left">
+                <video
+                  src=""
+                  class="video-item-left-video"
+                  poster=""
+                ></video>
+                <div class="video-item-time"></div>
+              </div>
+              <div class="video-item-right">
+                <div class="shorts-bot">
+                  <div class="shorts-bot-left">
+                    <p class="shorts-bot-left-para video-bot-left-para">
+                      
+                    </p>
+                    <p class="shorts-bot-left-views video-bot-left-views">
+                      
+                    </p>
+                    <p class="shorts-bot-left-views video-bot-left-views" id="allVideoViews">
+                     
+                    </p>
+                  </div>
+                  <div class="shorts-bot-right">
+                    <div class="shorts-bot-right-img-parent">
+                      <i
+                        class="fa-solid fa-ellipsis-vertical shorts-bot-right-img"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="video-item">
+              <div class="video-item-left">
+                <video
+                  src=""
+                  class="video-item-left-video"
+                  poster=""
+                ></video>
+                <div class="video-item-time"></div>
+              </div>
+              <div class="video-item-right">
+                <div class="shorts-bot">
+                  <div class="shorts-bot-left">
+                    <p class="shorts-bot-left-para video-bot-left-para">
+                      
+                    </p>
+                    <p class="shorts-bot-left-views video-bot-left-views">
+                    </p>
+                    <p class="shorts-bot-left-views video-bot-left-views" id="allVideoViews">
+                      
+                    </p>
+                  </div>
+                  <div class="shorts-bot-right">
+                    <div class="shorts-bot-right-img-parent">
+                      <i
+                        class="fa-solid fa-ellipsis-vertical shorts-bot-right-img"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <footer class="footer">
+          <div class="footer-left">
+            <a href="/" class="navbar-left-right">
+              <img
+                src="./data/logo.png"
+                alt="youtube logo"
+                class="navbar-left-right-img"
+              />
+              <p class="navbar-left-right-para">YouTube</p>
+            </a>
+          </div>
+          <div class="footer-right">
+            <marquee class="footer-right-text">
+              This is a YouTube clone developed strictly for educational and learning purposes, created to practice web development concepts and project implementation. It is not intended for commercial use, distribution, or monetization, and no copyright infringement or violation of intellectual property rights is intended in any manner.
+            </marquee>
+          </div>
+        </footer>
+      </section>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
